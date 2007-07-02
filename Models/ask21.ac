@@ -25461,7 +25461,7 @@ OBJECT poly
 name "asi.001"
 data 9
 Plane.011
-texture "höhenmesser.rgb"
+texture "hoehenmesser.rgb"
 texrep 1 1
 crease 30.000000
 numvert 153
