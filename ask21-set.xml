@@ -11,9 +11,15 @@ Started August 30 2006 by Heiko Schulz, Heiko.H.Schulz@gmx.net
 
  <sim>
 
-  <description>Schleicher ASK 21 Glider</description>
-  <author>Heiko Schulz, AJ MacLeod</author>
-  <status>early-production</status>
+   <description>Schleicher ASK 21 Glider</description>
+  <author>Heiko Schulz, AJ MacLeod, with help by Detlef Faber</author>
+  <status>beta</status>
+  <rating>
+ <FDM type="int">2</FDM>
+ <systems type="int">2</systems>
+ <cockpit type="int">2</cockpit>
+ <model type="int">3</model>
+</rating>
   <aircraft-version>20070701</aircraft-version>
   
   
