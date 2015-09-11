@@ -14,7 +14,7 @@
 <cockpit x="-1.648" y="0" z="0.572"/>
 
 <fuselage ax="0.0" ay="0.0" az="0.0" bx="-8.35" by="0.0" bz="0.3"
-		  width="0.68" taper="0.28" midpoint="0.25" idrag:="1" />
+		  width="0.68" taper="0.28" midpoint="0.25" idrag="1" />
 
 <wing x="-3.059" y="0.370" z="0.351" taper="0.15" incidence="5.0" twist="-2.5"
 	  length="8.334" chord="1.445" sweep="-5" dihedral="5" >
