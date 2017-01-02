@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
-
 <PropertyList>
-
- <path>interior.ac</path> 
-
+    <path>interior.ac</path>
     <!--COCKPIT-->
     <!-- Yaw string -->
     <model>
@@ -489,7 +486,6 @@
             <z-m>0.77602</z-m>
         </center>
     </animation>
-    
     <!--SHADERS/EFFECTS-->
     <!--Enable/disable windows for better visibility-->
     <animation>
@@ -503,12 +499,12 @@
         <object-name>sliding_window.back</object-name>
     </animation>
     <effect>
-        <inherits-from>Models/Effects/interior-glass-front</inherits-from>
+        <inherits-from>Aircraft/ASK21/Models/Effects/interior-glass-front</inherits-from>
         <object-name>canopy.front.int</object-name>
         <object-name>sliding_window.front</object-name>
     </effect>
     <effect>
-        <inherits-from>Models/Effects/interior-glass-back</inherits-from>
+        <inherits-from>Aircraft/ASK21/Models/Effects/interior-glass-back</inherits-from>
         <object-name>canopy.back.int</object-name>
         <object-name>sliding_window.back</object-name>
     </effect>
