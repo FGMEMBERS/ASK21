@@ -214,7 +214,7 @@
         <type>translate</type>
         <object-name>speedbrakeL</object-name>
         <object-name>speedbrakeR</object-name>
-        <property>/surface-positions/speedbrake-pos-norm</property>
+        <property>surface-positions/speedbrake-pos-norm</property>
         <factor>0.07</factor>
         <axis>
             <x>0</x>
@@ -258,6 +258,28 @@
     <model>
         <path>Aircraft/ASK21/Models/Interior/interior.xml</path>
     </model>
+    <!--IMMAT-->
+    <model>
+        <path>Immat/immat.xml</path>
+    </model>
+    <!--SMOKE for aerobatics-->
+    <model>
+        <path>Effects/Smoke/smoke-blue.xml</path>
+        <offsets>
+            <x-m>-1.44544</x-m>
+            <y-m>8.45121</y-m>
+            <z-m>1.37327</z-m>
+        </offsets>
+    </model>
+    <model>
+        <path>Effects/Smoke/smoke-white.xml</path>
+        <offsets>
+            <x-m>-1.44544</x-m>
+            <y-m>-8.45121</y-m>
+            <z-m>1.37327</z-m>
+        </offsets>
+    </model>
+    
     <!--GEAR-->
     <!--Compression-->
     <animation>
@@ -304,7 +326,7 @@
     <animation>
         <type>rotate</type>
         <object-name>canopy.frontframe</object-name>
-        <object-name>canopy.front2</object-name>
+        <object-name>canopy.front</object-name>
         <property>sim/model/door-positions/canopyF/position-norm</property>
         <interpolation>
             <entry>
@@ -328,6 +350,67 @@
             <z-m>0.82</z-m>
         </center>
     </animation>
+    
+    <!--Canopy Front Jettison-->
+  
+  
+    <animation>
+        <type>translate</type>
+        <object-name>canopy.frontframe</object-name>
+        <object-name>canopy.front</object-name>
+        <property>sim/model/door-positions/canopyFJ/position-norm</property>
+        <interpolation>
+            <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
+            <entry><ind> 0.2 </ind><dep> 0.5 </dep></entry>
+            <entry><ind> 1.0 </ind><dep> 0.5 </dep></entry>
+        </interpolation>
+        <axis>
+            <z>1</z>
+        </axis>
+    </animation>
+  
+    <animation>
+        <type>translate</type>
+        <object-name>canopy.frontframe</object-name>
+        <object-name>canopy.front</object-name>
+        <property>sim/model/door-positions/canopyFJ/position-norm</property>
+        <interpolation>
+            <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
+            <entry><ind> 0.2 </ind><dep> 0.0 </dep></entry>
+            <entry><ind> 0.4 </ind><dep> 0.7 </dep></entry>
+            <entry><ind> 1.0 </ind><dep> 0.7 </dep></entry>
+        </interpolation>
+        <axis>
+            <y>1</y>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>canopy.frontframe</object-name>
+        <object-name>canopy.front</object-name>
+        <property>sim/model/door-positions/canopyFJ/position-norm</property>
+        <interpolation>
+            <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
+            <entry><ind> 0.2 </ind><dep> 0.0 </dep></entry>
+            <entry><ind> 0.5 </ind><dep> 0.0 </dep></entry>
+            <entry><ind> 1.0 </ind><dep> -50 </dep></entry>
+        </interpolation>
+        <axis>
+            <z>1</z>
+        </axis>
+    </animation>
+  <animation>
+        <type>select</type>
+        <object-name>canopy.frontframe</object-name>
+        <object-name>canopy.front</object-name>
+        <condition>
+            <less-than>
+                <property>sim/model/door-positions/canopyFJ/position-norm</property>
+                <value>0.99</value>
+            </less-than>
+        </condition>
+  </animation>
+  <!--Back Canopy-->
     <animation>
         <type>pick</type>
         <object-name>canopy.backframe</object-name>
@@ -344,7 +427,7 @@
     <animation>
         <type>rotate</type>
         <object-name>canopy.backframe</object-name>
-        <object-name>canopy.back2</object-name>
+        <object-name>canopy.back</object-name>
         <property>sim/model/door-positions/canopyB/position-norm</property>
         <interpolation>
             <entry>
@@ -372,8 +455,8 @@
     <!--Glass shader-->
     <effect>
         <inherits-from>Effects/model-transparent</inherits-from>
-        <object-name>canopy.front2</object-name>
-        <object-name>canopy.back2</object-name>
+        <object-name>canopy.front</object-name>
+        <object-name>canopy.back</object-name>
     </effect>
     <!--Fuselage shader-->
     <effect>
