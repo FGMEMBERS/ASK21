@@ -148,7 +148,7 @@
     <!-- Electric Variometer -->
     <model>
         <name>vario2</name>
-        <path>Aircraft/Instruments-3d/glider/vario/ilec-sc7/ilec-sc7.xml</path>
+        <path>Aircraft/ASK21/Models/Interior/Panel/Instruments/ilec-sc7/ilec-sc7.xml</path>
         <offsets>
             <x-m>-3.32</x-m>
             <y-m>-0.08</y-m>
@@ -201,32 +201,12 @@
             <pitch-deg>-5</pitch-deg>
         </offsets>
     </model>
-    <model>
-        <name>compass_screws</name>
-        <path>Aircraft/ASK21/Models/Interior/Panel/Instruments/57mm_compass/57mm_screws.xml</path>
-        <offsets>
-            <x-m>-3.316</x-m>
-            <y-m>0.17</y-m>
-            <z-m>0.65</z-m>
-            <pitch-deg>-5</pitch-deg>
-        </offsets>
-    </model>
     <!--57mm turnslip-->
     <model>
         <name>turnslip</name>
         <path>Aircraft/ASK21/Models/Interior/Panel/Instruments/57mm_turnslip/57mm_turnslip.xml</path>
         <offsets>
             <x-m>-3.323</x-m>
-            <y-m>0</y-m>
-            <z-m>0.748</z-m>
-            <pitch-deg>-5</pitch-deg>
-        </offsets>
-    </model>
-    <model>
-        <name>turnslip_screws</name>
-        <path>Aircraft/ASK21/Models/Interior/Panel/Instruments/57mm_turnslip/57mm_screws.xml</path>
-        <offsets>
-            <x-m>-3.321</x-m>
             <y-m>0</y-m>
             <z-m>0.748</z-m>
             <pitch-deg>-5</pitch-deg>
@@ -289,8 +269,6 @@
         <object-name>vario2</object-name>
         <object-name>com</object-name>
         <object-name>compass</object-name>
-        <object-name>compass_screws</object-name>
         <object-name>turnslip</object-name>
-        <object-name>turnslip_screws</object-name>
     </effect>
 </PropertyList>
