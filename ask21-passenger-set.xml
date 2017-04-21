@@ -16,6 +16,18 @@ See AUTHORS.txt for credits
             <cockpit type="int">2</cockpit>
             <model type="int">3</model>
         </rating>
+	<tags>
+	    <tag>glider</tag>
+	    <tag>trainer</tag>
+	    <tag>1980s</tag>
+	    <tag>1990s</tag>
+	    <tag>2000s</tag>
+	    <tag>2010s</tag>
+	    <tag>aerobatic</tag>
+	    <tag>fixed-gear</tag>
+	    <tag>dual-controls</tag>
+	    <tag>tow</tag>
+	</tags>
         <aircraft-version>20161003</aircraft-version>
         <variant-of>ask21</variant-of>
         <flight-model>null</flight-model>

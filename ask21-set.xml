@@ -17,6 +17,18 @@ See AUTHORS.txt for credits
             <cockpit type="int">4</cockpit>
             <model type="int">4</model>
         </rating>
+	<tags>
+	    <tag>glider</tag>
+	    <tag>trainer</tag>
+	    <tag>1980s</tag>
+	    <tag>1990s</tag>
+	    <tag>2000s</tag>
+	    <tag>2010s</tag>
+	    <tag>aerobatic</tag>
+	    <tag>fixed-gear</tag>
+	    <tag>dual-controls</tag>
+	    <tag>tow</tag>
+	</tags>
         <systems>
             <property-rule n="101">
                 <name>gear_agl-m</name>
