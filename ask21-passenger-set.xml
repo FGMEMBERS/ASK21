@@ -7,7 +7,7 @@ See AUTHORS.txt for credits
 -->
 <PropertyList>
     <sim>
-        <description>ASK 21 Passenger/Instructor View</description>
+        <description>Schleicher ASK 21 Passenger/Instructor View for Multiplayer</description>
         <author>Patrice Poly; D-ECHO</author>
         <status>early-production</status>
         <rating>
@@ -28,7 +28,7 @@ See AUTHORS.txt for credits
 	    <tag>dual-controls</tag>
 	    <tag>tow</tag>
 	</tags>
-        <aircraft-version>20161003</aircraft-version>
+        <aircraft-version>4.0</aircraft-version>
         <variant-of>ask21</variant-of>
         <flight-model>null</flight-model>
         <startup>
