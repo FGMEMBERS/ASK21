@@ -5,55 +5,41 @@ setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_systems, 2);
 });
 
+var gh = "controls/gear/assist-1";
+
+setlistener("/velocities/groundspeed-kt", func(i) {
+	if(i.getValue()>15 and getprop(gh)==1){
+		setprop(gh, 0);
+	}
+});
+
+setlistener("/gear/gear[1]/wow", func(i) {
+	if(i.getValue()!=1 and getprop(gh)==1){
+		setprop(gh, 0);
+	}
+});
+
+
+
+
 var update_systems = func {
-    #A short part for the copilot :)
-    if(getprop("/sim/weight[1]/weight-lb")>=80){
-        setprop("/sim/model/copilot-present", 1);
-    }else{
-        setprop("/sim/model/copilot-present", 0);
-    }
-
-
-
-
-    # Conditions: glider must be on ground and people can only run up to 15kts (about), towing can be done up to 20
-    var assistConditions = getprop("gear/gear[1]/wow") == 1 and getprop("/velocities/groundspeed-kt") < 15;
-    var handlingConditions = getprop("gear/gear[1]/wow") == 1 and getprop("/velocities/groundspeed-kt") < 20;
-
-    # Wing holder
-    if (getprop("/controls/gear/assist-1") == 1 and assistConditions) {
-        setprop("controls/gear/assist", 1);
-    } else {
-        setprop("controls/gear/assist", 0);
-        setprop("/controls/gear/assist-1", 0); #automatically reset assisting gears on takeoff
-    }
-
-    # Ground handling
-    if (getprop("/controls/ground-handling") == 1 and handlingConditions) {
-        setprop("/controls/flight/rudder2", getprop("/controls/flight/rudder"));
-        setprop("/controls/flight/aileron2", getprop("/controls/flight/aileron"));
-        setprop("/controls/throttle-2", getprop("/controls/engines/engine/throttle"));
-
-        if (getprop("/controls/engines/engine/reverser")==1) {
-            setprop("/controls/throttle-2", 0);
-            setprop("/controls/throttle-reverse", getprop("/controls/engines/engine/throttle"));
-        } else {
-            setprop("/controls/throttle-reverse", 0);
-        }
-    } else {
-        setprop("/controls/flight/aileron2", 0);
-        setprop("/controls/flight/rudder2", 0);
-        setprop("/controls/throttle-2", 0);
-        setprop("/controls/throttle-reverse", 0);
-    }
     
+   
     
-    #Breakage code
-    if(getprop("/controls/breakage/enabled") and getprop("/controls/breakage/altitude-m")!=nil and getprop("/sim/hitches/winch/open")==0 ){
-        if(getprop("/position/gear-agl-m")>=getprop("/controls/breakage/altitude-m") ) {
-            setprop("/sim/hitches/winch/open", 1);
-        }
-    }
-
+    #Altimeter code for tutorial
+    var setting=getprop("/instrumentation/altimeter/setting-inhg") or 0;
+    var qnh=getprop("/environment/pressure-sea-level-inhg") or 0;
+    var qfe=getprop("/environmet/pressure-inhg") or 0;
+    
+    var diff1=setting-qnh;
+    var diff2=setting-qnh;
+	
+	if(diff1>0.05 or diff1<-0.05 and diff2>0.05 or diff2<-0.05){
+		setprop("/instrumentation/altimeter/setting-mismatch", 1);
+	}else{
+		setprop("/instrumentation/altimeter/setting-mismatch", 0);
+	}
+	
+	
     settimer(update_systems,0);
 }

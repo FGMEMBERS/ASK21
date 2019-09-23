@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--from the bocian by AJ MacLeod-->
-<PropertyList>
+<PropertyList include="FLARM/FLARM.xml">
     <fx>
         <nose-wheel-spin>
             <name>wheel-spin</name>
@@ -329,17 +329,25 @@
             <max-dist>10</max-dist>
         </airbrake-close>
 
+	<!--ILEC SC7 electric vario based on http://www.ilec-gmbh.com/ilec/manuals/SC7_Handbuch_d_2014.pdf-->
         <variometer-up>
             <name>variometer-up</name>
             <mode>looped</mode>
             <path>Aircraft/ASK21/Sounds/vario.wav</path>
             <condition>
                 <and>
-                <greater-than>
-                    <property>/instrumentation/variometer/te-reading-mps</property>
-                    <value>0.01</value>
-                </greater-than>
-                <property>/controls/electric/battery-switch</property>
+			<greater-than>
+			<property>/instrumentation/variometer/te-reading-mps</property>
+			<value>0.01</value>
+			</greater-than>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/ilec-sc7</property>
+				<value>9</value>
+			</greater-than-equals>
+			<greater-than>
+				<property>/instrumentation/ilec-sc7/audio</property>
+				<value>0</value>
+			</greater-than>
                 </and>
             </condition>
             <pitch>
@@ -367,17 +375,24 @@
             <path>Aircraft/ASK21/Sounds/vario2.wav</path>
             <condition>
                 <and>
-                <greater-than>
-                    <property>/instrumentation/variometer/te-reading-mps</property>
-                    <value>-10.00</value>
-                </greater-than>
-                <and>
-                    <less-than>
-                        <property>/instrumentation/variometer/te-reading-mps</property>
-                        <value>-0.01</value>
-                    </less-than>
-                </and>
-                <property>/controls/electric/battery-switch</property>
+			<greater-than>
+			<property>/instrumentation/variometer/te-reading-mps</property>
+			<value>-10.00</value>
+			</greater-than>
+			<and>
+			<less-than>
+				<property>/instrumentation/variometer/te-reading-mps</property>
+				<value>-0.01</value>
+			</less-than>
+			</and>
+			<equals>
+				<property>/instrumentation/ilec-sc7/audio</property>
+				<value>2</value>
+			</equals>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/ilec-sc7</property>
+				<value>9</value>
+			</greater-than-equals>
                 </and>
             </condition>
             <pitch>

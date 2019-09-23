@@ -3,6 +3,36 @@
     <path>panelF.ac</path>
     <!--COCKPIT-->
     <!--FRONT INSTRUMENTS-->
+    
+    <!--Aftermarket Windcompass by Herby :D-->
+    <model>
+        <name>wind</name>
+        <path>Instruments/windcompass/windcompass.xml</path>
+        <offsets>
+            <x-m>-3.328</x-m>
+            <y-m>-0.0</y-m>
+            <z-m>0.74</z-m>
+            <pitch-deg>-4</pitch-deg>
+        </offsets>
+    </model>
+    <animation>
+	    <type>select</type>
+	    <object-name>wind</object-name>
+	    <condition>
+		    <property>/sim/model/windcompass</property>
+	    </condition>
+    </animation>
+    <!--FLARM v3 Display-->
+    <model>
+        <name>flarmv3</name>
+        <path>Instruments/FLARMv3/FLARMv3.xml</path>
+        <offsets>
+            <x-m>-3.322</x-m>
+            <y-m>-0.08</y-m>
+            <z-m>0.666733</z-m>
+            <pitch-deg>-4</pitch-deg>
+        </offsets>
+    </model>
     <!--ASI-->
     <model>
         <name>asi</name>
@@ -75,8 +105,8 @@
         </offsets>
     </model>
     <model>
-        <name>alt-1</name>
-        <path>Instruments/alt/Altimeter.xml</path>
+        <name>alt-ft</name>
+        <path>Instruments/alti-4320/winter-4320.xml</path>
         <offsets>
             <x-m>-3.315</x-m>
             <y-m>-0.16</y-m>
@@ -95,7 +125,7 @@
     </animation>
     <animation>
         <type>select</type>
-        <object-name>alt-1</object-name>
+        <object-name>alt-ft</object-name>
         <condition>
             <equals>
                 <property>/sim/model/livery/instruments/alt</property>
@@ -181,7 +211,7 @@
     <!-- COM Radio -->
     <model>
         <name>com</name>
-        <path>Aircraft/ASK21/Models/Interior/Panel/Instruments/ar-3201/ar-3201.xml</path>
+        <path>Aircraft/ASK21/Models/Interior/Panel/Instruments/ar-6201/ar-6201.xml</path>
         <offsets>
             <x-m>-3.313</x-m>
             <y-m>0.0</y-m>
